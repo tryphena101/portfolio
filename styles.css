@@ -1,11 +1,11 @@
 @font-face {
     font-family: "Calgary";
-    src: url("./Calgary_DEMO.ttf");
+    src: url("Calgary_DEMO.ttf");
   }
 
 @font-face {
   font-family: "Courier";
-  src: url("./CourierPrime-Regular.ttf");
+  src: url("CourierPrime-Regular.ttf");
 }
 
 * {
