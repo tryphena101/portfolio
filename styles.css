@@ -1,0 +1,180 @@
+@font-face {
+    font-family: "Calgary";
+    src: url("calgary_DEMO.ttf");
+  }
+
+@font-face {
+  font-family: "Courier";
+  src: url("CourierPrimer-Regular.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Calgary", sans-serif;
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #93e1d8;
+  padding: 20px;
+  text-align: center;
+  /* border-bottom: 1px solid #00c2cb; */
+}
+header nav a {
+  padding: 10px 20px;
+  font-size: 2rem;
+  color: #ffe45e;
+  border-radius: 5px;
+  letter-spacing: 0.5px;
+}
+header nav a:hover,
+header nav a.active {
+  background: #5aa9e6;
+  color: #42455a;
+  transition: 0.5s ease-out;
+  letter-spacing: 2px;
+}
+body {
+  background: #93e1d8;
+}
+section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section:nth-child(1) {
+  color: #e0ffff;
+}
+section:nth-child(2) {
+  color: #00c2cb;
+  letter-spacing: 2px;
+  /* background: #93e1d8; */
+}
+section:nth-child(3) {
+  color: #e0ffff;
+}
+section:nth-child(4) {
+  color: #e0ffff;
+  /* background: #93e1d8; */
+}
+section:nth-child(5) {
+  color: #e0ffff;
+}
+section .container {
+  margin: 100px;
+}
+section h1 {
+  font-size: 3rem;
+  margin: 20px;
+}
+section h2 {
+  font-size: 40px;
+  text-align: center;
+  text-transform: uppercase;
+}
+section .text-container {
+  display: flex;
+  font-family: "Courier", sans-serif;
+}
+
+section .text-container .profile {
+  border-radius: 200px;
+  height: 400px;
+  width: 400px;
+}
+
+section .text-container .text-box .intro {
+  margin-top: -30%;
+  margin-left: 35%;
+  text-align: justify;
+}
+
+section .text-container .text-box {
+  margin: 20px;
+  padding: 10px;
+}
+
+section .text-container .text-box h3 {
+  font-size: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+
+}
+
+section .text-container .text-box p {
+  font-size: 20px;
+  font-family: "Courier", sans-serif;
+}
+
+.p1 {
+  border: 0px solid white;
+  padding: 10px;
+  background-color: white;
+  /* border-style: dashed; */
+}
+
+.pic {
+  filter:  brightness(0) invert(1);
+  padding: 32px;
+  width:100px;
+  height: 100px;
+}
+
+.pic a:hover {
+  fill: #ffe45e;
+  transition: 0.5s ease-out;
+}
+
+
+section .text-container .text-box a{
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-family: "Courier", sans-serif;
+}
+
+section .text-container .text-box a:hover,
+section .text-container .text-box a.active {
+  background: #5aa9e6;
+  color: #42455a;
+  transition: 0.5s ease-out;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 900px) {
+  section h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  section .text-container {
+    flex-direction: column;
+  }
+}
+
+.reveal {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 2s all ease;
+}
+
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
+}
