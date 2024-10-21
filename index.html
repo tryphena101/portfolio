@@ -1,89 +1,112 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Portfolio</title>
+  <title>NITHYA TRYPHENA</title>
   <meta charset="UTF-8"/>
 
   <link rel="stylesheet" href="styles.css">
-  <script src='script.js' defer></script>
+  
+  <!-- Alpine Plugins -->
+<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/anchor@3.x.x/dist/cdn.min.js"></script>
+ 
+<!-- Alpine Core -->
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="#home" class="active">Home</a>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-  <section id="home">
-    <div class="container reveal">
-      <h1>Hi there! Thanks for stopping by.</h1>
+  <div class='start' x-data="{ selected: '/'}">  
+
+    <div class = 'nav_section'> 
+
+    <p class = 'name'>Nithya Tryphena</p>  
+    <p class = 'title'>Designer & Developer</p>  
+
+    <div class='nav_content'>   
+        <nav class='nav'>  
+            <ul>  
+                <li x-bind:class="{'is-selected': selected === '/' }">  
+                  <a href='/' x-on:click.prevent="selected = '/'" class='link'>
+                    Home</a>   
+                </li>  
+                <li x-bind:class="{'is-selected': selected === 'about' }">  
+                    <a href="#about" x-on:click.prevent="selected = 'about'">About</a>  
+                </li>  
+                <li x-bind:class="{'is-selected': selected === 'projects' }">  
+                    <a href='#projects' x-on:click.prevent="selected = 'projects'">Projects</a>  
+                </li>  
+                <li x-bind:class="{'is-selected': selected === 'contact' }">  
+                    <a href='#contact' x-on:click.prevent="selected = 'contact'">Contact</a>  
+                </li>  
+            </ul>  
+        </nav>  
     </div>
-  </section>
-  <section id="about">
-    <div class="container reveal">
-      <h2 class="title">About</h2>
-      <div class="text-container">
-        <div class="text-box">
-          <p><img src = './selfie.png' class = 'profile'></p>
-          <p class ="intro">I'm Nithya. I'm a self-taught coder with a professional background in data analytics.
-            Recently I've also gotten into web development and spent the last six months learning the ropes of HTML, CSS and Javascript
-            and building fun projects (which you can find below) to utilise what I've learned.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>  
+    <div class='content'>  
+        <div x-show.transition="selected === '/'" class='home' x-transition.duration.800ms>   
+        </div>  
 
-  <section id="projects">
-    <div class="container reveal">
-      <h2>Projects</h2>
-      <div class="text-container">
-        <div class="text-box">
-          <h3>Rock Paper Scissors</h3>
-          <p>
-            <img src ="./rockpaperscissors.png" class = "p1" height="200" width="440">
-          </p>
-          <h3 class ="link">
-            <a href="https://tryphena101.github.io/rockpaperscissors_js/" target="_blank">Website</a> | <a href="https://github.com/tryphena101/rockpaperscissors_js" target="_blank">Repository</a>
-          </h3>
-        </div>
-        <div class="text-box">
-          <h3>Etch a Sketch</h3>
-          <p><img src ="./etchasketch.png" class = "p1" height="200" width="440"></p>
-          <h3 class ="link">
-            <a href="https://tryphena101.github.io/etch_a_sketch/" target="_blank">Website</a> | <a href="https://github.com/tryphena101/etch_a_sketch" target="_blank">Repository</a>
-          </h3>
-        </div>
-        <div class="text-box">
-          <h3>Weather App</h3>
-          <p><img src ="./weatherapp.png" class = "p1" height="200" width="440"></p>
-          <h3 class="link">
-            <a href="https://tryphena101.github.io/Weather-App/" target="_blank">Website</a> | <a href="https://github.com/tryphena101/Weather-App" target="_blank">Repository</a>
-          </h3>
-        </div>
-      </div>
-    </div>
-  </section>
+        
+        <div x-show.transition="selected === 'projects'" class='page_projects' x-transition.duration.800ms>  
 
-  <section id="contact">
-    <div class="container reveal">
-      <h2>Contact</h2>
-      <div class="text-container">
-        <div class="text-box">
+          <div class = 'links'> 
+            <ul class = 'link_list'> 
+            <li> <a href="https://tryphena101.github.io/Weather-App/" target="_blank">
+              Weather App</a></li>
+            <div class="project_desc1">
+               Coded in vanilla JS and powered by OpenWeather API
+            </div>
 
-          <a href="https://github.com/tryphena101"><img src="./github.svg" width="50" height="50" class="pic"> </a>
+            <li> 
+            <a href="https://tryphena101.github.io/rockpaperscissors_js/" target="_blank">
+            Rock Paper Scissors</a>
+            </li>
+            <div class="project_desc1">
+            Coded in vanilla JS
+            </div>
 
-        </div>
-        <div class="text-box">
+            <li>
+              <a href="https://tryphena101.github.io/etch_a_sketch/" target="_blank">
+                Etch A Sketch
+              </a>
+            </li>
+            <div class="project_desc1">
+              Coded in vanilla JS
+            </div>
+          </ul>
 
+          </div>
+        </div><!--page_projects-->  
+        
+          <div x-show ="selected === 'about'" class = 'page_about' x-transition.duration.800ms> 
+            <p class = 'content_about'> 
+            Hi, I'm Nithya, I'm a web designer and front end developer. I am always curious to learn more when it comes to creative coding and the 
+            technologies that come with it.<p><br>
+             I designed and coded this website using HTML, CSS and Alpine JS (a minimal Javascript framework that
+             I thought I would try to learn for this specific project). </p>
+             <p><br> I also know my way around React, Figma for wireframe mockups and I know how to 
+             work with APIs to pull data for projects.</p>
+            <br><p> 
+      
 
-          <a href="mailto:tryph101@gmail.com"><img src="./email.svg" width="50" height="50" class="pic"> </a>
-        </div>
-          <div class="text-box">
+          Here is my <p class='github'><b> <a href="https://github.com/tryphena101">github</a></b></p></p>
+          </div> 
+     
+          <div x-show.transition="selected === 'contact'" class = 'page_contact' x-transition.duration.800ms >
+            <p class = 'content_contact'>
+              CONTACT
+            </p>
 
-            <a href="https://www.linkedin.com/in/nithya-t-495bb0147/"><img src="./linkedin.svg" width="50" height="50" class="pic"> </a>
-        </div>
-      </div>
-    </div>
-  </section>
+            <p class='email'> <a href="mailto:tryph101@gmail.com"><b> nithyatryph@gmail.com</b></a></p>
+          </div>
+  
+    
+       
+  
+    </div><!-- /.content-->
+  
+    </div><!-- /.start -->
+
+  </div>
+
+  </body>
+</head>
+  </html>

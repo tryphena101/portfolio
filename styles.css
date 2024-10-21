@@ -1,38 +1,45 @@
 @font-face {
-    font-family: "Calgary";
-    src: url("Calgary_DEMO.ttf");
+    font-family: "FiraMono";
+    src: url("FiraMono-Regular.ttf");
   }
 
 @font-face {
-  font-family: "Courier";
-  src: url("CourierPrime-Regular.ttf");
+  font-family: "JosefinSans";
+  src: url("JosefinSans-Regular.ttf");
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Calgary", sans-serif;
+  /* font-family: "JosefinSans", sans-serif; */
   scroll-behavior: smooth;
 }
 a {
   text-decoration: none;
+  pointer-events: stroke;
 }
 ul {
   list-style: none;
 }
+
+
+
 header {
   position: fixed;
+  float: left;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: #93e1d8;
+  background: #C0C78C;
   padding: 20px;
   text-align: center;
   /* border-bottom: 1px solid #00c2cb; */
 }
-header nav a {
+
+
+/* header nav a {
   padding: 10px 20px;
   font-size: 2rem;
   color: #ffe45e;
@@ -45,136 +52,245 @@ header nav a.active {
   color: #42455a;
   transition: 0.5s ease-out;
   letter-spacing: 2px;
-}
+} */
 body {
-  background: #93e1d8;
-}
-section {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-section:nth-child(1) {
-  color: #e0ffff;
-}
-section:nth-child(2) {
-  color: #00c2cb;
-  letter-spacing: 2px;
-  /* background: #93e1d8; */
-}
-section:nth-child(3) {
-  color: #e0ffff;
-}
-section:nth-child(4) {
-  color: #e0ffff;
-  /* background: #93e1d8; */
-}
-section:nth-child(5) {
-  color: #e0ffff;
-}
-section .container {
-  margin: 100px;
-}
-section h1 {
-  font-size: 3rem;
-  margin: 20px;
-}
-section h2 {
-  font-size: 40px;
-  text-align: center;
-  text-transform: uppercase;
-}
-section .text-container {
-  display: flex;
-  font-family: "Courier", sans-serif;
+  background: #C0C78C;
+  overflow: hidden;
 }
 
-section .text-container .profile {
-  border-radius: 200px;
-  height: 400px;
-  width: 400px;
+.start {
+  position: absolute;
+  top: 10px;
+  left: 100px;
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  pointer-events: none;
+  color: #8e996b;
 }
 
-section .text-container .text-box .intro {
-  margin-top: -30%;
-  margin-left: 35%;
-  text-align: justify;
+.nav_section {
+  position:absolute;
+  top:50px;
 }
 
-section .text-container .text-box {
-  margin: 20px;
-  padding: 10px;
+.name {
+  font-family: 'JosefinSans';
+  font-size: 50px;
 }
 
-section .text-container .text-box h3 {
-  font-size: 30px;
-  text-align: center;
-  text-transform: uppercase;
-  margin-bottom: 10px;
+.title {
+  font-family: "FiraMono";
+  font-size: 13px;
+  position: absolute;
+  top: 55px;
+  left: 1px;
 
 }
 
-section .text-container .text-box p {
-  font-size: 20px;
-  font-family: "Courier", sans-serif;
+.nav {
+  font-family: "FiraMono";
+  font-size: 13px;
+  position: absolute;
+  top: 100px;
+
 }
 
-.p1 {
-  border: 0px solid white;
-  padding: 10px;
-  background-color: white;
-  /* border-style: dashed; */
+li { 
+  margin: 10px 0; 
 }
 
-.pic {
-  filter:  brightness(0) invert(1);
-  padding: 32px;
-  width:100px;
-  height: 100px;
+.nav a:link {
+  color:#8c9669
 }
 
-.pic a:hover {
-  fill: #ffe45e;
-  transition: 0.5s ease-out;
+.nav a:visited {
+  color: #8c9669
 }
 
-
-section .text-container .text-box a{
-  font-size: 20px;
-  color: white;
-  text-align: center;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-  font-family: "Courier", sans-serif;
-}
-
-section .text-container .text-box a:hover,
-section .text-container .text-box a.active {
-  background: #5aa9e6;
-  color: #42455a;
-  transition: 0.5s ease-out;
-  letter-spacing: 2px;
-}
-
-@media (max-width: 900px) {
-  section h1 {
-    font-size: 2rem;
-    text-align: center;
-  }
-  section .text-container {
-    flex-direction: column;
-  }
-}
-
-.reveal {
+.nav a:hover {
+  display: inline-block;
   position: relative;
-  transform: translateY(150px);
-  opacity: 0;
-  transition: 2s all ease;
 }
 
-.reveal.active {
-  transform: translateY(0);
-  opacity: 1;
+.nav a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #d5dba4;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
+
+/* .wrapper {
+  position:absolute;
+} */
+
+.content {
+  position: absolute;
+  display: block;
+  top: 200px;
+  right: 100px;
+  font-family: 'JosefinSans';
+  
+}
+
+.page_about{
+  position:absolute;
+  right:100px;
+  width: 500px;
+}
+
+.github a:link {
+  color:#8c9669;
+  position: relative;
+  font-family: "FiraMono";
+  font-size: 13px;
+  top: -16px;
+  left: 80px;
+
+}
+
+.github a:visited {
+  color:#8c9669;
+
+}
+
+.github a:hover {
+  display: inline-block;
+  position: relative;
+}
+
+.github a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #d5dba4;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.github a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
+
+.page_projects {
+  position: absolute;
+  right: 100px;
+  margin-top: -50px;
+  width: 500px;
+}
+
+.links {
+  font-size: 50px;
+}
+
+.links a:link {
+  color:#8c9669;
+
+}
+
+.links a:visited {
+  color:#8c9669;
+
+}
+
+.links a:hover {
+  display: inline-block;
+  position: relative;
+}
+
+.links a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #d5dba4;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.links a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.links li {
+  margin: 30px 0; 
+}
+
+.project_desc1 {
+  font-size: 13px;
+  font-family: "FiraMono";
+  top: -20px;
+  position: relative;
+}
+
+.page_contact {
+  position: absolute;
+  right: -200px;
+  width: 500px;
+}
+
+.email {
+  font-family: "FiraMono";
+  font-size:13px;
+}
+
+.email a:link {
+  color:#8c9669;
+
+}
+
+.email a:visited {
+  color:#8c9669;
+
+}
+
+.email a:hover {
+  display: inline-block;
+  position: relative;
+}
+
+.email a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #d5dba4;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.email a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
